@@ -2,6 +2,7 @@
   "expo": {
     "name": "planty",
     "slug": "planty",
+    "scheme": "planty",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

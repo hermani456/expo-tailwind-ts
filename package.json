@@ -1,7 +1,7 @@
 {
   "name": "planty",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@expo/vector-icons": "^14.0.2",
     "expo": "~52.0.3",
     "expo-constants": "~17.0.2",
     "expo-linking": "~7.0.2",
@@ -17,10 +18,12 @@
     "expo-status-bar": "~2.0.0",
     "nativewind": "^4.1.23",
     "react": "18.3.1",
+    "react-dom": "18.3.1",
     "react-native": "0.76.1",
     "react-native-reanimated": "^3.16.1",
     "react-native-safe-area-context": "^4.12.0",
     "react-native-screens": "~4.0.0",
+    "react-native-web": "~0.19.13",
     "tailwindcss": "^3.4.14"
   },
   "devDependencies": {
