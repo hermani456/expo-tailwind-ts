@@ -1,6 +1,7 @@
+import { PlantlyButton } from "@/components/Button";
 import { useUserStore } from "@/store/userStore";
 import { useRouter } from "expo-router";
-import { View, StyleSheet, Button } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 export default function OnboardingScreen() {
   const router = useRouter();
@@ -10,17 +11,17 @@ export default function OnboardingScreen() {
     router.replace("/");
   };
   return (
-    <View style={styles.container}>
-      <Button title="Finish Onboarding" onPress={handlePress} />
+    <View className="flex-1 justify-center items-center bg-teal-500">
+      <PlantlyButton title="Finish Onboarding" onPress={handlePress} />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff",
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: "center",
+//     alignItems: "center",
+//     backgroundColor: "#fff",
+//   },
+// });

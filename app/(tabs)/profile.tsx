@@ -1,5 +1,6 @@
+import { PlantlyButton } from "@/components/Button";
 import { useUserStore } from "@/store/userStore";
-import { Text, View, Button } from "react-native";
+import { Text, View } from "react-native";
 
 export default function ProfileScreen() {
   const toggleHasOnboarded = useUserStore((state) => state.toggleHasOnboarded);
@@ -8,7 +9,7 @@ export default function ProfileScreen() {
       <Text className="text-6xl font-bold bg-gradient-to-b p-2 from-teal-400 to-purple-700 text-transparent bg-clip-text">
         Profile Screen
       </Text>
-      <Button title="Go to Home" onPress={toggleHasOnboarded} />
+      <PlantlyButton title="Go to Home" onPress={toggleHasOnboarded} />
     </View>
   );
 }
