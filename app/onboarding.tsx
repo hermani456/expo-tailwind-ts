@@ -1,7 +1,10 @@
 import { PlantlyButton } from "@/components/Button";
+import PlantyImage from "@/components/PlantyImage";
 import { useUserStore } from "@/store/userStore";
+import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
-import { View, StyleSheet } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { Text, View } from "react-native";
 
 export default function OnboardingScreen() {
   const router = useRouter();
@@ -11,17 +14,21 @@ export default function OnboardingScreen() {
     router.replace("/");
   };
   return (
-    <View className="flex-1 justify-center items-center bg-teal-500">
+    <LinearGradient
+      colors={["#4c669f", "#3b5998", "#192f6a"]}
+      className="flex-1 justify-around items-center bg-teal-500"
+    >
+      <StatusBar style="light" />
+      <View>
+        <Text className="text-white text-3xl text-center">
+          Welcome to Plantly
+        </Text>
+        <Text className="text-white text-lg text-center">
+          Your plant companion
+        </Text>
+      </View>
+      <PlantyImage />
       <PlantlyButton title="Finish Onboarding" onPress={handlePress} />
-    </View>
+    </LinearGradient>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: "center",
-//     alignItems: "center",
-//     backgroundColor: "#fff",
-//   },
-// });
