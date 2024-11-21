@@ -1,15 +1,27 @@
 import { StatusBar } from "expo-status-bar";
-import { Text, View } from "react-native";
+import { FlatList } from "react-native";
 // eslint-disable-next-line import/no-unresolved
 import "@/global.css";
+import { usePlantStore } from "@/store/plantsStore";
+import { PlantCard } from "@/components/PlantCard";
+import { PlantlyButton } from "@/components/Button";
+import { useRouter } from "expo-router";
 
 export default function App() {
+  const plants = usePlantStore((state) => state.plants);
+  const router = useRouter();
+
   return (
-    <View className="h-screen flex justify-center items-center">
-      <Text className="text-red-500 font-semibold">
-        Open up App.tsx to start working on your app!
-      </Text>
-      <StatusBar style="auto" />
-    </View>
+    <FlatList
+      contentContainerClassName="p-4"
+      data={plants}
+      renderItem={({ item }) => <PlantCard key={item.id} plant={item} />}
+      ListEmptyComponent={
+        <PlantlyButton
+          title="Add a plant"
+          onPress={() => router.navigate("/new")}
+        />
+      }
+    />
   );
 }
